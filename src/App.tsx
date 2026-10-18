@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { SiteProvider } from './lib/site'
 import { Shopfront } from './components/Shopfront'
@@ -14,18 +15,20 @@ import { ActionBar } from './components/ActionBar'
 function Home() {
   return (
     <SiteProvider>
-      <Shopfront />
-      <main>
-        <ThisWeek />
-        <DoughStory />
-        <People />
-        <Menu />
-        <Delivery />
-        <Rooms />
-        <WriteToUs />
-      </main>
-      <Footer />
-      <ActionBar />
+      <MotionConfig reducedMotion="user">
+        <Shopfront />
+        <main>
+          <ThisWeek />
+          <DoughStory />
+          <People />
+          <Menu />
+          <Delivery />
+          <Rooms />
+          <WriteToUs />
+        </main>
+        <Footer />
+        <ActionBar />
+      </MotionConfig>
     </SiteProvider>
   )
 }

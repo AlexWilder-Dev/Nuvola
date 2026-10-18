@@ -18,7 +18,13 @@ export function SiteSwitch({ compact = false }: { compact?: boolean }) {
             className={`switch-opt ${on ? 'is-on' : ''}`}
             onClick={() => setSite(id)}
           >
-            {on && <motion.span layoutId={compact ? 'switch-pill-compact' : 'switch-pill'} className="switch-pill" transition={{ type: 'spring', stiffness: 420, damping: 34 }} />}
+            {on && (
+              <motion.span
+                layoutId={compact ? 'switch-pill-compact' : 'switch-pill'}
+                className="switch-pill"
+                transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+              />
+            )}
             <span className="switch-name">{compact ? s.short : s.name}</span>
             {!compact && <span className="switch-hint">{s.switchHint}</span>}
           </button>

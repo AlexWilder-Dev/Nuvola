@@ -61,7 +61,9 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  transition: border-color 0.3s, color 0.3s;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
 }
 
 .dough-progress li.is-done {
@@ -336,8 +338,7 @@
 .menu-card--brixton {
   background:
     radial-gradient(120% 60% at 0% 0%, rgba(255, 255, 255, 0.55), transparent 60%),
-    radial-gradient(90% 50% at 100% 100%, rgba(120, 182, 226, 0.35), transparent 70%),
-    #d8ebf7;
+    radial-gradient(90% 50% at 100% 100%, rgba(120, 182, 226, 0.35), transparent 70%), #d8ebf7;
 }
 
 .menu-card--croydon {

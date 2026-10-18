@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { useSite } from '../lib/site'
 import { brand, sites, siteOrder } from '../data/nuvola'
 
@@ -7,6 +7,8 @@ import { brand, sites, siteOrder } from '../data/nuvola'
 export function WriteToUs() {
   const { siteId } = useSite()
   const [sent, setSent] = useState<{ name: string; site: string } | null>(null)
+  const [formSite, setFormSite] = useState(siteId)
+  useEffect(() => setFormSite(siteId), [siteId])
 
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -23,8 +25,7 @@ export function WriteToUs() {
             Write to us
           </h2>
           <p className="muted">
-            Or email{' '}
-            <a href={`mailto:${brand.email}`}>{brand.email}</a>
+            Or email <a href={`mailto:${brand.email}`}>{brand.email}</a>
           </p>
         </div>
 
@@ -50,7 +51,7 @@ export function WriteToUs() {
                 <legend className="caps">Which Nuvola?</legend>
                 {siteOrder.map((id) => (
                   <label key={id} className="chip">
-                    <input type="radio" name="site" value={id} defaultChecked={id === siteId} />
+                    <input type="radio" name="site" value={id} checked={id === formSite} onChange={() => setFormSite(id)} />
                     <span>{sites[id].name}</span>
                   </label>
                 ))}

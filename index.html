@@ -4,57 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Nuvola Pizza · Biga pizza in Brixton Village &amp; Boxpark Croydon</title>
-    <meta name="description" content="Neapolitan pizza on a biga dough, given time and baked in a wood-fired oven: light and soft, like a cloud. At 4 Market Row, Brixton Village, and Boxpark Croydon. Book a table or order now." />
+    <meta
+      name="description"
+      content="Neapolitan pizza on a biga dough, given time and baked in a wood-fired oven: light and soft, like a cloud. At 4 Market Row, Brixton Village, and Boxpark Croydon. Book a table or order now."
+    />
     <meta name="theme-color" content="#f3f0e8" />
     <link rel="canonical" href="https://alexwilder-dev.github.io/nuvola-pizza/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Nuvola Pizza" />
     <meta property="og:title" content="Nuvola Pizza · Brixton Village &amp; Boxpark Croydon" />
-    <meta property="og:description" content="Biga dough, long fermentation, wood-fired. A light, soft pizza that feels like a cloud with every bite. Book in Brixton, order in Croydon." />
+    <meta
+      property="og:description"
+      content="Biga dough, long fermentation, wood-fired. A light, soft pizza that feels like a cloud with every bite. Book in Brixton, order in Croydon."
+    />
     <meta property="og:url" content="https://alexwilder-dev.github.io/nuvola-pizza/" />
     <meta property="og:image" content="https://alexwilder-dev.github.io/nuvola-pizza/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="A margherita held at the mouth of Nuvola's wood-fired oven, beside the NUVOLA Biga Pizza lettering and cloud." />
+    <meta
+      property="og:image:alt"
+      content="A margherita held at the mouth of Nuvola's wood-fired oven, beside the NUVOLA Biga Pizza lettering and cloud."
+    />
     <meta property="og:locale" content="en_GB" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nuvola Pizza · Brixton Village &amp; Boxpark Croydon" />
-    <meta name="twitter:description" content="Biga dough, long fermentation, wood-fired. A light, soft pizza that feels like a cloud with every bite. Book in Brixton, order in Croydon." />
+    <meta
+      name="twitter:description"
+      content="Biga dough, long fermentation, wood-fired. A light, soft pizza that feels like a cloud with every bite. Book in Brixton, order in Croydon."
+    />
     <meta name="twitter:image" content="https://alexwilder-dev.github.io/nuvola-pizza/og.jpg" />
-    <meta name="twitter:image:alt" content="A margherita held at the mouth of Nuvola's wood-fired oven, beside the NUVOLA Biga Pizza lettering and cloud." />
+    <meta
+      name="twitter:image:alt"
+      content="A margherita held at the mouth of Nuvola's wood-fired oven, beside the NUVOLA Biga Pizza lettering and cloud."
+    />
 
     <link rel="icon" type="image/png" sizes="32x32" href="https://alexwilder-dev.github.io/nuvola-pizza/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="64x64" href="https://alexwilder-dev.github.io/nuvola-pizza/favicon-64.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://alexwilder-dev.github.io/nuvola-pizza/apple-touch-icon.png" />
     <script>
       // Paint the right shopfront before the app loads (Croydon is dark).
-      (function () {
+      ;(function () {
         try {
-          var h = location.hash;
-          var s = /^#\/croydon/.test(h) ? 'croydon' : /^#\/brixton/.test(h) ? 'brixton' : localStorage.getItem('nuvola-site');
-          if (s === 'croydon' || s === 'brixton') document.documentElement.setAttribute('data-site', s);
+          var h = location.hash
+          var s = /^#\/croydon/.test(h) ? 'croydon' : /^#\/brixton/.test(h) ? 'brixton' : localStorage.getItem('nuvola-site')
+          if (s === 'croydon' || s === 'brixton') document.documentElement.setAttribute('data-site', s)
         } catch (e) {}
-      })();
+      })()
     </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      (() => {
-        try {
-          if (location.hash === '#me') localStorage.setItem('me', '1');
-          if (localStorage.getItem('me') || sessionStorage.getItem('pinged')) return;
-          sessionStorage.setItem('pinged', '1');
-        } catch (e) {}
-        const v = new URLSearchParams(location.search).get('v') || 'untagged';
-        fetch('https://ntfy.sh/YOUR-NTFY-TOPIC', {
-          method: 'POST', body: `${v} opened ${location.pathname}`, keepalive: true
-        }).catch(() => {});
-      })();
-    </script>
+<script>
+(() => {
+  try {
+    if (location.hash === '#me') localStorage.setItem('me', '1');
+    if (localStorage.getItem('me') || sessionStorage.getItem('pinged')) return;
+    sessionStorage.setItem('pinged', '1');
+  } catch (e) {}
+  const v = new URLSearchParams(location.search).get('v') || 'untagged';
+  fetch('https://ntfy.sh/YOUR-NTFY-TOPIC', {
+    method: 'POST', body: `${v} opened ${location.pathname}`, keepalive: true
+  }).catch(() => {});
+})();
+</script>
   </body>
 </html>

@@ -1,8 +1,8 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import Wordmark from './Wordmark'
 import { SiteSwitch } from './SiteSwitch'
-import { Arrow, Pin } from './Icons'
+import { Arrow, Pin, Star } from './Icons'
 import { useSite } from '../lib/site'
 import { openStatus, type OpenStatus } from '../lib/hours'
 import { photos } from '../data/photos'
@@ -22,6 +22,11 @@ function useOpenStatus(hours: Parameters<typeof openStatus>[0] | undefined) {
 export function Shopfront() {
   const { site, siteId } = useSite()
   const status = useOpenStatus(site.hours)
+  const reduce = useReducedMotion()
+  const firstPaint = useRef(true)
+  useEffect(() => {
+    firstPaint.current = false
+  }, [])
 
   return (
     <header className="shopfront" id="top">
@@ -30,15 +35,22 @@ export function Shopfront() {
       </div>
 
       <div className="fascia">
-        <div className="wrap fascia-inner">
-          {siteId === 'croydon' && <span className="unit-no unit-no--l">{site.unitLeft}</span>}
+        {/* Switching site repaints the sign, left to right. */}
+        <motion.div
+          key={siteId}
+          className="wrap fascia-inner"
+          initial={firstPaint.current || reduce ? false : { clipPath: 'inset(0 100% 0 0)' }}
+          animate={{ clipPath: 'inset(0 0% 0 0)' }}
+          transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
+        >
+          {site.unitLeft && <span className="unit-no unit-no--l">{site.unitLeft}</span>}
           <h1 className="fascia-word">
             <Wordmark />
             <span className="sr-only">Nuvola Pizza, {site.name}</span>
           </h1>
           <p className="fascia-sub caps">{site.fasciaLine}</p>
-          {siteId === 'croydon' && <span className="unit-no unit-no--r">{site.unitRight}</span>}
-        </div>
+          {site.unitRight && <span className="unit-no unit-no--r">{site.unitRight}</span>}
+        </motion.div>
       </div>
 
       <div className="wrap shop-body">
@@ -66,6 +78,14 @@ export function Shopfront() {
               {status.label}
             </p>
           ) : null}
+          {site.rating && (
+            <a className="shop-rating" href={site.rating.url} target="_blank" rel="noreferrer">
+              <Star />
+              <span>
+                <strong>{site.rating.score}</strong> on Google · {site.rating.count} reviews
+              </span>
+            </a>
+          )}
           <a className="shop-address" href={site.mapsUrl} target="_blank" rel="noreferrer">
             <Pin />
             <span>
@@ -73,6 +93,13 @@ export function Shopfront() {
               <span className="shop-dir">{site.where}</span>
             </span>
           </a>
+          <button
+            type="button"
+            className="shop-menu-link"
+            onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            See the {site.short} menu ↓
+          </button>
         </div>
 
         <div className="btn-row shop-actions">

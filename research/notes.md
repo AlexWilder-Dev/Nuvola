@@ -5,7 +5,9 @@ Researched 18 October 2026. **Verified** = page, PDF or JSON fetched and read. *
 ## Who they are
 
 - **Company:** Fatti di Impasto Ltd (company no. 15565667, on their site's footer). Incorporated 15 March 2024, active, SIC 56290. Sole director **Fatjon Peto**, Italian, born 1989 (Companies House, verified). The company name means roughly "made of dough".
-- **Founder:** their site (verified, rendered): *"Nuvola was born from the dream of Fatjon, a pizzaiolo who honed his craft in Naples before moving to London in 2018. After years of experience in traditional Neapolitan pizzerias…"* The chef photo on their site is filed as `chef-fatjon.jpg`.
+- **Founder:** their site (verified, rendered): *"Nuvola was born from the dream of Fatjon, a pizzaiolo who honed his craft in Naples before moving to London in 2018. After years of experience in traditional Neapolitan pizzerias…"* The chef photo on their site is filed as `chef-fatjon.jpg`. Brixton Culture Capital, 21 Aug 2025 (verified, read.brixtonculturecapital.com/p/nuvola-takes-franco-mancas-first): Fatjon *"learnt to make pizza while living in Rome and Naples, and then moved to Brixton, where he spent seven years at the famous Made of Dough. He says to me, 'Gerald, I have my own style now'."* (The company name, Fatti di Impasto, is close to Italian for "made of dough".)
+- **Process, in their own words** (same article, quoted speech): *"We prepare the biga one day, rest it, then make the final dough and let it mature again. About sixty hours, start to finish."* The writer adds: dough made daily, portioned, rested cold, baked hot; the Sausage & Friarielli is *"reimagined — he blitzes it into a pesto, so every bite carries greens and sausage"*. An older Instagram bio (snippet) said "52h of slow rise"; the site uses the quoted "about sixty hours".
+- **Opened:** Brixton around May 2025 (Brixton Village "6 Must-Try Openings", 15 May 2025; BV TikToks 12 May and 3 Jun 2025), in Unit 4 Market Row — Franco Manca's original site (Brixton Culture Capital, Brixton Buzz). Croydon: unit photos on Boxpark from January 2026; opening date not found.
 - **Brixton chef:** OpenTable (snippet; OpenTable blocked every fetch): *"an authentic Neapolitan experience led by Chef Fabio … who has honed his craft in some of the best pizzerias in Naples"*, and has won awards in his hometown. So: Fatjon founded it; Fabio runs the Brixton kitchen. Both appear on the site.
 - **Method, in their words** (nuvolapizza.co.uk): *"The name Nuvola (Italian for 'cloud') reflects our philosophy: a light, soft, and highly digestible dough that feels like a cloud with every bite. We use the biga method, an evolution of sourdough, perfected through countless trials until we achieved the ideal balance of fragrance, texture, and flavor."* *"…from the long fermentation of the dough to the selection of fresh, high-quality ingredients."*
 - **Brixton Village's write-up** (brixtonvillage.com/trader/nuvola-pizza, verified): *"Nuvola was born from a simple idea: make pizza the right way. Few ingredients, carefully chosen. Dough that's properly made and given the time it needs. And real attention to how it's cooked. They don't follow trends… The oven doesn't forgive mistakes, but when a pizza comes out just right, you can taste the difference… made to be eaten, not just admired… a tight-knit team with their hands in the dough."*
@@ -20,15 +22,26 @@ Researched 18 October 2026. **Verified** = page, PDF or JSON fetched and read. *
 
 The two are different businesses for the visitor: a sit-down pizzeria you book versus a food-hall stall you order from on your phone.
 
+## Still trading?
+
+Yes, both (checked 18 Oct 2026). Brixton: Google Maps shows this week's hours; EatClub visits on 1, 7 and 11 Oct 2026; a TikTok from 25 Sep 2026; Brixton Culture Capital's 27 Aug 2026 issue lists its Tuesday deal; food hygiene 5 (Jan 2026). Croydon: Google Maps "Open · Closes 10 PM" with reviews from the last two months; Boxpark and Playbox pages live; Just Eat menu republished 18 Oct 2026; food hygiene 4 (Jan 2026). Nothing marks either as closed.
+
+## Socials
+
+- **@nuvolapizzauk is the live Instagram** (10K followers, 327 posts). Bio: "Neapolitan Pizza Biga fermented dough / 📍 4 Market Row, Brixton —London SW9 8LD / 📍 BOXPARK Croydon". The latest post date couldn't be read (Instagram blocked repeat requests).
+- **@nuvolabigapizza is dead** (profile not found). Boxpark's and Playbox's Nuvola pages still link to it; worth asking them to fix.
+- TikTok @nuvolapizzauk: 22K followers, 522 videos, active into late September 2026.
+
 ## Who comes, and when (from the listings and reviews found)
 
-- Brixton: market-goers, dates and small groups at the outside tables; dog owners; budget eaters on Tuesdays (Brixton Buzz: 50% off on Tuesdays — also the "EVERY TUESDAY 50% OFF ALL PIZZA!" chalkboard in a photo on their own site; not confirmed as current, so not on the new site). Hours suit lunch Tue/Fri–Sun and evenings all week except Monday. OpenTable tags it dog-friendly, happy hour, neighbourhood gem (snippet).
+- Brixton: the market lunch crowd (Brixton Village's lunch guide lists "Nuvola – 50% off all pizza (Tuesday)"); Tuesday half-price deal-hunters (Brixton Culture Capital, Aug 2025 and Aug 2026; Brixton Buzz; TikTok "ONLY ON TUESDAYS – all pizzas half price"; the chalkboard in their own photo); groups for the bottomless deal ("Big table for bottomless? Book ahead."); pre-gig eaters before O2 Academy Brixton shows; dates and small groups at the outside tables ("people hovering for seats like it's rush hour"). OpenTable tags it dog-friendly (snippet). Lunch Tue/Fri–Sun, evenings every day but Monday.
 - Croydon: Boxpark crowd — groups, after-work, event and match nights in the hall (Boxpark's own happy hour, 5–8pm Mon–Fri, is the venue's, not Nuvola's). Open 11.30am–10pm every day.
 
 ## What reviewers say
 
-- **Praise:** the dough. OpenTable (snippets, 2026): *"Absolutely great italian dough, hats off for accomodating vegan cheese"* (Sara, June 2026); light dough, generous portions; efficient service. Brixton Buzz: *"the staff are really nice"*. Just Eat: Brixton 43 ratings, Croydon 37, both shown as 5 stars (most 5★, a tail of 1–2★).
-- **Complaints:** Brixton Buzz (Nov 2025 guide, critical): *"overpriced at full price and not great quality at all – skimpy toppings… It all feels a bit improvised"*, no bathroom, cold outside tables in winter. OpenTable: very busy, slower service (4★ with service 3). Uber Eats Croydon 3.6 vs Brixton 4.1.
+- **Ratings (checked 18 Oct 2026):** Google Brixton **4.9 from 462** (the 412 figure is an old thatsup copy from July); Google Croydon **4.4 from 102**; EatClub Brixton 4.7 (70); Just Eat Brixton 43 and Croydon 37 ratings, shown as 5 stars; Uber Eats Brixton 4.1 (600+), Croydon 3.6 (250+); OpenTable 4.7 (4, snippet); not on TripAdvisor.
+- **Praise:** the pizza and the dough. Google, Brixton: *"Very good pizza. One of the best we had in Brixton"* (Jac L); *"Made to order and more value for money than any pizza I've ordered in South London…"* (Supriya Iyer). Google, Croydon: *"Honestly, this was the best pizza I've ever had in my life."* (Prema Devi Gurewan); *"One of the best woodfire-based pizza places in Croydon!"* (Rinki Banik). OpenTable (snippet): *"Absolutely great italian dough, hats off for accomodating vegan cheese"* (Sara, June 2026). Topics Google pulls from Brixton reviews: pepperoni and honey, Neapolitan pizza, quality ingredients, tiramisu, fried artichokes, gluten-free base, fluffy crust. Croydon: margherita, broccoli rabe, nduja. A Croydon staff member, Kinsley, is named for good service. Brixton Buzz: *"the staff are really nice"*.
+- **Complaints:** mostly delivery — cold, late, burnt, skimpy (Google, Brixton, 2★: *"barely any aubergine for something that costs over £16"*; Croydon, 2★: *"almost every time pizza is completely burnt"*; *"took over an hour to arrive so was stone cold"* via Uber Eats). Brixton Buzz (Nov 2025 guide, updated May 2026, critical): *"overpriced at full price and not great quality at all – skimpy toppings… It all feels a bit improvised"*, no bathroom, cold outside tables in winter. OpenTable: very busy, slower service (4★ with service 3). Uber Eats Croydon 3.6 vs Brixton 4.1.
 - **Price confusion is real:** a Margherita is £8.50 ordered at the Croydon stall (me&u), £9.95 sit-down in Brixton, £10.50 on Just Eat Brixton, £13.95 on Just Eat Croydon and on Uber Eats. The site shows each menu with its own source so nobody is misled.
 
 ## The current site (nuvolapizza.co.uk) — what's weak
@@ -51,9 +64,12 @@ The two are different businesses for the visitor: a sit-down pizzeria you book v
 | Brixton menu (food + drinks) | PDFs linked from nuvolapizza.co.uk | Verified, date not printed |
 | Croydon menu | Boxpark PDF = me&u live menu = PNG on their site | Verified, current |
 | Bundles, vegan pizzas | Just Eat menu JSON for each site, published 14 and 18 Oct 2026 | Verified |
-| Unlimited Pizza & Drinks: unlimited pizza, Aperol Spritz, Prosecco, Peroni | OpenTable (via brief and snippets) | Contents confirmed; **£40pp / 90 min only in snippets, left off** |
+| Unlimited Pizza & Drinks: unlimited pizza, Aperol Spritz, Prosecco, Peroni; £40pp, 90 minutes from when you're seated | Brixton Culture Capital, Aug 2025 (verified) and OpenTable listing (snippet) agree | Price confirmed by two sources; nights and times not found |
+| Half-price pizza every Tuesday (Brixton) | Brixton Culture Capital 27 Aug 2026, Brixton Village lunch guide, Brixton Buzz (May 2026), their chalkboard photo | Recent; site adds "offers can change" |
+| Google ratings 4.9 (462) / 4.4 (102) | Google Maps place data | Verified 18 Oct 2026 |
+| Croydon: halal, gluten-free and vegan options | Nuvola's Croydon Google profile | Verified |
 | Weekly special pizza with seasonal ingredients | OpenTable "About" (snippet) | Slot in data; no current special found |
-| Instagram | Brixton Village links @nuvolapizzauk; Boxpark links @nuvolabigapizza; their site links @nuvolapizzauk and TikTok @nuvolapizzauk | See below |
+| Instagram | @nuvolapizzauk live; @nuvolabigapizza dead | Verified |
 
 ## Photos (all real; what each shows and where it's used)
 
@@ -66,7 +82,7 @@ From nuvolapizza.co.uk:
 - `site-06` — aubergine pizza with an Aperol Spritz, light wood table. *Not used.*
 - `site-08` — top-down pizza with sausage, mushrooms, fior di latte, basil, on a round board. *Cropped round for the end of the dough sequence (under the cloud, like the mural).*
 - `site-09` — pepperoni & hot honey on a board (also Boxpark's image-2). *Not used.*
-- `site-10` — olive pizza by an "EVERY TUESDAY 50% OFF ALL PIZZA!" chalkboard. *Not used (offer not confirmed current).*
+- `site-10` — olive pizza by an "EVERY TUESDAY 50% OFF ALL PIZZA!" chalkboard. *Evidence for the Tuesday offer; photo not used.*
 - `site-11` — top-down pizza beside the bright-blue paper menu. *Not used (cheese looks like vegan cheese; can't label it).*
 - `site-12` — Brixton front with a full house outside, plants hanging from the arcade. *"Come by", Brixton.*
 - `hero-image` — margherita held at the mouth of the wood-fired oven, fire behind. *Brixton shopfront window; og.jpg.*
@@ -87,4 +103,4 @@ From Boxpark (550×440 studio shots on pale concrete): ham & mushroom, margherit
 
 1. Turn every ad click into an order or a booking at the right site in a tap or two (their current site has no Croydon action and no delivery links at all, while they pay for ads to it).
 2. Make the cloud-light biga dough, Fatjon and Chef Fabio the reason to choose Nuvola in a town full of pizzerias (it's the one thing reviewers consistently praise, and the counter to "overpriced/skimpy").
-3. Fill Brixton's quieter tables with what's already theirs and not on the site: the Unlimited Pizza & Drinks night and the weekly special.
+3. Fill Brixton's tables beyond half-price Tuesdays with what's already theirs and not on the site: the Unlimited Pizza & Drinks night and the weekly special.

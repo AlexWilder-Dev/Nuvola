@@ -6,6 +6,7 @@ import '@fontsource-variable/figtree'
 import './styles.css'
 import './sections.css'
 import './more.css'
+import './details.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(

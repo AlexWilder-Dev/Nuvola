@@ -30,7 +30,10 @@ function textPath(font, text, x, y, size, fill, tracking = 0) {
 
 function inner(svgFile) {
   const s = readFileSync(svgFile, 'utf8')
-  const viewBox = s.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number)
+  const viewBox = s
+    .match(/viewBox="([^"]+)"/)[1]
+    .split(' ')
+    .map(Number)
   const body = s.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '')
   return { viewBox, body }
 }
@@ -78,7 +81,13 @@ const cloudSquare = (size, pad, bg) => `
   <svg x="${pad}" y="${pad}" width="${size - pad * 2}" height="${size - pad * 2}" viewBox="${cloud.viewBox.join(' ')}" preserveAspectRatio="xMidYMid meet">${cloud.body}</svg>
 </svg>`
 
-await sharp(Buffer.from(cloudSquare(180, 18, fascia))).png().toFile('public/apple-touch-icon.png')
-await sharp(Buffer.from(cloudSquare(64, 2, null))).png().toFile('public/favicon-64.png')
-await sharp(Buffer.from(cloudSquare(32, 1, null))).png().toFile('public/favicon-32.png')
+await sharp(Buffer.from(cloudSquare(180, 18, fascia)))
+  .png()
+  .toFile('public/apple-touch-icon.png')
+await sharp(Buffer.from(cloudSquare(64, 2, null)))
+  .png()
+  .toFile('public/favicon-64.png')
+await sharp(Buffer.from(cloudSquare(32, 1, null)))
+  .png()
+  .toFile('public/favicon-32.png')
 console.log('favicons written')

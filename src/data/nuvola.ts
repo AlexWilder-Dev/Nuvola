@@ -25,6 +25,7 @@ export type Experience = {
   title: string
   description: string
   includes: string[]
+  price?: string
   details: string[]
   cta: string
   href: string
@@ -41,7 +42,6 @@ const UBER_EATS_CROYDON = 'https://www.ubereats.com/gb/store/nuvola-boxpark-croy
 const BOXPARK_BOOKING = 'https://www.boxpark.co.uk/venues/croydon/food-and-drink/nuvola-pizza?book=true'
 const MEANDU = 'https://www.meandu.app/bpf-croydon/counter/nuvola-pizza'
 
-
 export type MenuItem = {
   name: string
   description?: string
@@ -50,6 +50,8 @@ export type MenuItem = {
   marks?: string[]
   /** Key into the photo map, only where a real photo of that dish exists. */
   photo?: string
+  /** A line on why this one is theirs. */
+  signature?: string
 }
 
 export type MenuSection = {
@@ -78,16 +80,64 @@ export const brixtonMenu: Menu = {
       id: 'pizza',
       title: 'Pizza',
       items: [
-        { name: 'Margherita', description: 'Tomato sauce, Fior di Latte Mozzarella, Basil & Olive Oil', price: '9.95', photo: 'studio-margherita' },
-        { name: 'Pepperoni & Hot Honey', description: 'Tomato sauce, Fior di Latte Mozzarella, Pepperoni, Basil & Olive Oil, and a touch of Honey', price: '12.50', photo: 'studio-pepperoni' },
-        { name: 'Mushroom & Truffle', description: 'Fior di Latte Mozzarella, Mushrooms, Parmesan & Truffle Oil', price: '11.50', photo: 'studio-mushroom-truffle' },
-        { name: 'Sausage & Friarielli Pesto', description: 'Friarielli pesto base (broccoli rabe), Fior di Latte Mozzarella, Pork Sausage, Parmesan & Olive Oil', price: '13.50' },
-        { name: 'Parma Ham & Rocket', description: 'Fior di Latte Mozzarella (white base), datterini cherry tomato, Parma Ham, Rocket & Parmesan', price: '13.95' },
-        { name: 'Artichoke & Olives', description: 'Tomato sauce, Fior di Latte Mozzarella, Artichoke, Black Olives, Olive Oil, Oregano', price: '11.95', photo: 'studio-artichoke-olives' },
-        { name: 'Nduja & Pesto', description: 'Tomato sauce, Fior di Latte Mozzarella, Nduja, Pesto, Olive Oil', price: '12.95', photo: 'studio-nduja-pesto' },
-        { name: 'Spicy Salame & Jalapeño', description: 'Tomato sauce, Fior di Latte Mozzarella, Spicy Salami, Jalapeño, Red Onion, Olive Oil', price: '12.50' },
-        { name: 'Aubergine', description: 'Tomato sauce, Fior di Latte Mozzarella, Grilled Aubergine, Salted Ricotta, Basil & Olive Oil', price: '10.95', photo: 'studio-aubergine' },
-        { name: 'Ham & Mushroom', description: 'Tomato sauce, Fior di Latte Mozzarella, Mushrooms, Ham, Basil & Olive Oil', price: '11.95', photo: 'studio-ham-mushroom' },
+        {
+          name: 'Margherita',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Basil & Olive Oil',
+          price: '9.95',
+          photo: 'studio-margherita',
+        },
+        {
+          name: 'Pepperoni & Hot Honey',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Pepperoni, Basil & Olive Oil, and a touch of Honey',
+          price: '12.50',
+          photo: 'studio-pepperoni',
+        },
+        {
+          name: 'Mushroom & Truffle',
+          description: 'Fior di Latte Mozzarella, Mushrooms, Parmesan & Truffle Oil',
+          price: '11.50',
+          photo: 'studio-mushroom-truffle',
+        },
+        {
+          name: 'Sausage & Friarielli Pesto',
+          signature: 'Our own take: the friarielli is blitzed into a pesto, so every bite carries greens and sausage.',
+          description: 'Friarielli pesto base (broccoli rabe), Fior di Latte Mozzarella, Pork Sausage, Parmesan & Olive Oil',
+          price: '13.50',
+        },
+        {
+          name: 'Parma Ham & Rocket',
+          description: 'Fior di Latte Mozzarella (white base), datterini cherry tomato, Parma Ham, Rocket & Parmesan',
+          price: '13.95',
+        },
+        {
+          name: 'Artichoke & Olives',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Artichoke, Black Olives, Olive Oil, Oregano',
+          price: '11.95',
+          photo: 'studio-artichoke-olives',
+        },
+        {
+          name: 'Nduja & Pesto',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Nduja, Pesto, Olive Oil',
+          price: '12.95',
+          photo: 'studio-nduja-pesto',
+        },
+        {
+          name: 'Spicy Salame & Jalapeño',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Spicy Salami, Jalapeño, Red Onion, Olive Oil',
+          price: '12.50',
+        },
+        {
+          name: 'Aubergine',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Grilled Aubergine, Salted Ricotta, Basil & Olive Oil',
+          price: '10.95',
+          photo: 'studio-aubergine',
+        },
+        {
+          name: 'Ham & Mushroom',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Mushrooms, Ham, Basil & Olive Oil',
+          price: '11.95',
+          photo: 'studio-ham-mushroom',
+        },
       ],
     },
     {
@@ -222,14 +272,51 @@ export const croydonMenu: Menu = {
       id: 'pizza',
       title: 'Pizza',
       items: [
-        { name: 'Margherita', description: 'Tomato sauce, Fior di Latte Mozzarella, Basil & Olive Oil', price: '8.50', marks: ['VP'], photo: 'studio-margherita' },
-        { name: 'Pepperoni & Hot Honey', description: 'Tomato sauce, Fior di Latte Mozzarella, Pepperoni, Basil & Hot Honey', price: '11.95', marks: ['HP'], photo: 'studio-pepperoni' },
-        { name: 'Mushroom & Truffle', description: 'Fior di Latte Mozzarella, Mushrooms, Parmesan & Truffle Oil', price: '9.95', marks: ['VP'], photo: 'studio-mushroom-truffle' },
-        { name: 'Sausage & Friarielli Pesto', description: 'Friarielli pesto base (broccoli rabe), Fior di Latte Mozzarella, Italian Sausage, Parmesan', price: '12.50' },
+        {
+          name: 'Margherita',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Basil & Olive Oil',
+          price: '8.50',
+          marks: ['VP'],
+          photo: 'studio-margherita',
+        },
+        {
+          name: 'Pepperoni & Hot Honey',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Pepperoni, Basil & Hot Honey',
+          price: '11.95',
+          marks: ['HP'],
+          photo: 'studio-pepperoni',
+        },
+        {
+          name: 'Mushroom & Truffle',
+          description: 'Fior di Latte Mozzarella, Mushrooms, Parmesan & Truffle Oil',
+          price: '9.95',
+          marks: ['VP'],
+          photo: 'studio-mushroom-truffle',
+        },
+        {
+          name: 'Sausage & Friarielli Pesto',
+          signature: 'Our own take: the friarielli is blitzed into a pesto, so every bite carries greens and sausage.',
+          description: 'Friarielli pesto base (broccoli rabe), Fior di Latte Mozzarella, Italian Sausage, Parmesan',
+          price: '12.50',
+        },
         { name: 'Nduja', description: 'Tomato sauce, Fior di Latte Mozzarella, Nduja, Basil & Olive Oil', price: '10.50' },
-        { name: 'Aubergine & Pesto', description: 'Tomato sauce, Fior di Latte Mozzarella, Aubergine, Caramelised Onion, Pesto & Olive Oil', price: '10.95', marks: ['VP'] },
-        { name: 'Ham & Mushroom', description: 'Tomato sauce, Fior di Latte Mozzarella, Mushrooms, Ham, Basil & Olive Oil', price: '11.50', photo: 'studio-ham-mushroom' },
-        { name: 'Chicken BBQ', description: 'Tomato sauce, Fior di Latte Mozzarella, Chicken Strips, Barbecue Sauce, Basil & Olive Oil', price: '11.95' },
+        {
+          name: 'Aubergine & Pesto',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Aubergine, Caramelised Onion, Pesto & Olive Oil',
+          price: '10.95',
+          marks: ['VP'],
+        },
+        {
+          name: 'Ham & Mushroom',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Mushrooms, Ham, Basil & Olive Oil',
+          price: '11.50',
+          photo: 'studio-ham-mushroom',
+        },
+        {
+          name: 'Chicken BBQ',
+          description: 'Tomato sauce, Fior di Latte Mozzarella, Chicken Strips, Barbecue Sauce, Basil & Olive Oil',
+          price: '11.95',
+        },
       ],
     },
     {
@@ -299,20 +386,20 @@ export const story = {
     {
       short: 'Biga',
       label: '01 · Biga',
-      title: 'It starts with a biga',
-      body: 'A stiff pre-ferment of flour, water and a little yeast, made before the dough itself. We got here through countless trials, chasing the right balance of fragrance, texture and flavour.',
+      title: 'It starts the day before',
+      body: 'We prepare the biga one day and let it rest: flour, water and a little yeast, an evolution of sourdough. We got here through countless trials, chasing the right balance of fragrance, texture and flavour.',
     },
     {
       short: 'Time',
       label: '02 · Time',
-      title: 'Then we wait',
-      body: 'Long fermentation. The dough is given time to grow and fill with air, and nobody hurries it.',
+      title: 'About sixty hours, start to finish',
+      body: 'Then we make the final dough and let it mature again. Long fermentation, rested cold, given the time it needs. Nobody hurries it.',
     },
     {
       short: 'Nuvola',
       label: '03 · Nuvola',
       title: 'Light as a cloud',
-      body: 'That is the name. Light, soft and highly digestible, with an edge that rises and stays airy.',
+      body: 'Nuvola is Italian for cloud. A light, soft, highly digestible dough that feels like a cloud with every bite.',
     },
     {
       short: 'Fire',
@@ -321,15 +408,19 @@ export const story = {
       body: 'The wood-fired oven doesn’t forgive mistakes. When a pizza comes out just right, the edge puffs up and catches, and you can taste the difference.',
     },
   ],
-  peopleTitle: 'Trained in Naples, baking in London',
+  peopleTitle: 'Rome, Naples, Brixton',
   people: [
     {
       name: 'Fatjon',
       role: 'Founder · pizzaiolo',
-      body: 'Nuvola was born from Fatjon’s dream. He honed his craft in traditional Neapolitan pizzerias in Naples before moving to London in 2018, and set out to bring that pizza, done his way, to the heart of the city.',
+      body: 'Nuvola was born from Fatjon’s dream. He learnt to make pizza in Rome and Naples, moved to London in 2018 and spent seven years at Made of Dough in Brixton before opening Nuvola at Unit 4, Market Row in 2025.',
+      quote: 'I have my own style now.',
       photo: 'chef-dough',
       photoAlt: 'Fatjon stretching a disc of dough in the air beside the oven.',
-      source: { label: 'Our story, nuvolapizza.co.uk', url: 'https://nuvolapizza.co.uk/#about' },
+      source: {
+        label: 'Brixton Culture Capital, August 2025',
+        url: 'https://read.brixtonculturecapital.com/p/nuvola-takes-franco-mancas-first',
+      },
     },
     {
       name: 'Fabio',
@@ -341,6 +432,7 @@ export const story = {
     name: string
     role: string
     body: string
+    quote?: string
     photo?: string
     photoAlt?: string
     source?: { label: string; url: string }
@@ -374,6 +466,12 @@ type Site = {
   special?: Special
   unlimited?: Experience
   howItWorks?: { title: string; kicker: string; steps: string[] }
+  /** Standing offers that have been published recently. */
+  offers?: { when: string; what: string; note: string }[]
+  /** Google rating as shown on Google Maps when checked. */
+  rating?: { score: string; count: number; checked: string; url: string }
+  /** Real reviews, quoted exactly and credited. */
+  quotes?: { text: string; author: string; where: string }[]
   delivery?: {
     kicker: string
     title: string
@@ -392,7 +490,6 @@ type Site = {
     photoFocus?: string
   }
 }
-
 
 export const sites: Record<SiteId, Site> = {
   brixton: {
@@ -426,11 +523,31 @@ export const sites: Record<SiteId, Site> = {
     menu: brixtonMenu,
     menuIntro: 'The sit-down menu at Market Row. Gluten-free base on request, £3 extra.',
 
+    // Half-price Tuesdays: Brixton Culture Capital (Aug 2025, and its 27 Aug 2026 issue), Brixton Village's lunch guide,
+    // Brixton Buzz (updated May 2026) and the chalkboard in Nuvola's own photos.
+    offers: [{ when: 'Every Tuesday', what: 'Half-price pizza', note: 'Offers can change, so check when you book.' }],
+
+    rating: {
+      score: '4.9',
+      count: 462,
+      checked: '18 Oct 2026',
+      url: 'https://www.google.com/maps/search/?api=1&query=Nuvola+Pizza+4+Market+Row+Brixton+London+SW9+8LD',
+    },
+    quotes: [
+      { text: 'Very good pizza. One of the best we had in Brixton', author: 'Jac L', where: 'Google' },
+      {
+        text: 'Made to order and more value for money than any pizza I’ve ordered in South London…',
+        author: 'Supriya Iyer',
+        where: 'Google',
+      },
+    ],
+
     // OpenTable: "we feature a weekly special pizza, created with fresh, seasonal ingredients".
     // Fill in name/description/price each week; until then the slot says how to find out.
     special: {
       name: 'A new pizza every week',
-      description: 'Made with fresh, seasonal ingredients, on the same biga dough. It changes weekly, so ask at Market Row or check our Instagram.',
+      description:
+        'Made with fresh, seasonal ingredients, on the same biga dough. It changes weekly, so ask at Market Row or check our Instagram.',
       note: 'Brixton Village only.',
       link: { label: 'See it on Instagram', href: 'https://www.instagram.com/nuvolapizzauk/' },
     },
@@ -441,7 +558,11 @@ export const sites: Record<SiteId, Site> = {
       title: 'Unlimited Pizza & Drinks',
       description: 'Unlimited pizza from the wood oven, with Aperol Spritz, Prosecco and Peroni to go with it.',
       includes: ['Unlimited pizza', 'Aperol Spritz', 'Prosecco', 'Peroni'],
-      details: ['Book it as an experience on our OpenTable page; dates, times and price are shown there.'],
+      price: '£40 per person · 90 minutes',
+      details: [
+        'Your 90 minutes start when you’re seated. Switch drinks as you like.',
+        'Big table? Book ahead. Book it as an experience on our OpenTable page.',
+      ],
       cta: 'Book the Unlimited night',
       href: OPENTABLE,
     },
@@ -476,8 +597,10 @@ export const sites: Record<SiteId, Site> = {
     room: {
       kicker: 'The shop in the market',
       body: 'A white shopfront with our name painted in blue, on Market Row in the covered arcade of Brixton Village. A few seats inside, more at the tables out front under the market roof.',
-      features: ['Dogs welcome', 'Outdoor tables', 'Book on OpenTable'],
-      directions: ['Market Row runs between Electric Lane, Coldharbour Lane and Atlantic Road, a few minutes’ walk from Brixton station (Victoria line).'],
+      features: ['Dogs welcome', 'Outdoor tables', 'Gluten-free base', 'Vegan pizzas'],
+      directions: [
+        'Market Row runs between Electric Lane, Coldharbour Lane and Atlantic Road, a few minutes’ walk from Brixton station (Victoria line).',
+      ],
       photo: 'brixton-arcade',
       photoAlt: 'Nuvola’s shopfront on Market Row with people eating at the tables outside, under the arcade roof.',
       photoFocus: '50% 40%',
@@ -516,6 +639,16 @@ export const sites: Record<SiteId, Site> = {
     ],
     menu: croydonMenu,
     menuIntro: 'The stall menu at Boxpark Croydon, the same one you order from on me&u.',
+    rating: {
+      score: '4.4',
+      count: 102,
+      checked: '18 Oct 2026',
+      url: 'https://www.google.com/maps/search/?api=1&query=Nuvola+Pizza+Boxpark+Croydon+99+George+Street+CR0+1LD',
+    },
+    quotes: [
+      { text: 'Honestly, this was the best pizza I’ve ever had in my life.', author: 'Prema Devi Gurewan', where: 'Google' },
+      { text: 'One of the best woodfire-based pizza places in Croydon!', author: 'Rinki Banik', where: 'Google' },
+    ],
     howItWorks: {
       title: 'At the stall',
       kicker: 'Order at your table',
@@ -545,7 +678,8 @@ export const sites: Record<SiteId, Site> = {
     room: {
       kicker: 'The stall in the hall',
       body: 'Unit 38 in Boxpark Croydon, the black-framed counter with our oven behind it. Eat in the hall with everyone else.',
-      features: ['Order on your phone', 'Next to East Croydon station'],
+      // "We proudly offer Halal, gluten-free, and vegan options" (Nuvola's Croydon Google profile)
+      features: ['Halal options', 'Gluten-free base', 'Vegan options', 'Order on your phone'],
       directions: ['Boxpark Croydon is on George Street, right by East Croydon station.'],
       photo: 'croydon-unit',
       photoAlt: 'Nuvola’s black-framed unit at Boxpark Croydon, numbers 39 and 38 either side of the sign and the oven glowing inside.',

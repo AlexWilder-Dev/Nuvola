@@ -31,6 +31,7 @@ export function People() {
                 <p className="caps">{p.role}</p>
                 <h3 className="display">{p.name}</h3>
                 <p>{p.body}</p>
+                {p.quote && <blockquote className="person-quote">“{p.quote}”</blockquote>}
                 {p.source && (
                   <p className="person-source muted">
                     <a href={p.source.url} target="_blank" rel="noreferrer">

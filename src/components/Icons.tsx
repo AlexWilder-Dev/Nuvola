@@ -13,6 +13,12 @@ export const Pin = ({ className = 'icon' }: P) => (
   </svg>
 )
 
+export const Star = ({ className = 'icon' }: P) => (
+  <svg className={className} viewBox="0 0 18 18" aria-hidden="true">
+    <path d="m9 1.8 2.2 4.6 5 .7-3.6 3.5.9 5L9 13.2l-4.5 2.4.9-5L1.8 7.1l5-.7L9 1.8Z" fill="currentColor" />
+  </svg>
+)
+
 export const Clock = ({ className = 'icon' }: P) => (
   <svg className={className} viewBox="0 0 18 18" fill="none" aria-hidden="true">
     <circle cx="9" cy="9" r="6.6" stroke="currentColor" strokeWidth="1.7" />

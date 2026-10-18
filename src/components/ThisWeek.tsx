@@ -76,6 +76,7 @@ export function ThisWeek() {
               </p>
               <h3 className="sr-only">{unlimited.title}</h3>
               <p>{unlimited.description}</p>
+              {unlimited.price && <p className="unlimited-price">{unlimited.price}</p>}
               <ul className="includes" aria-label="Included">
                 {unlimited.includes.map((i) => (
                   <li key={i}>{i}</li>
@@ -100,6 +101,21 @@ export function ThisWeek() {
               )}
             </motion.article>
           )}
+          {siteId === 'brixton' &&
+            brixton.offers?.map((o) => (
+              <motion.article key={o.when} className="panel panel--offer" {...rise}>
+                <p className="caps">{o.when}</p>
+                <p className="offer-what">{o.what}</p>
+                <p className="panel-note">{o.note}</p>
+                <a className="btn btn--line" href={site.actions[0].href} target="_blank" rel="noreferrer">
+                  <span>
+                    {site.actions[0].label}
+                    <small>{site.actions[0].via}</small>
+                  </span>
+                  <Arrow />
+                </a>
+              </motion.article>
+            ))}
         </div>
       </div>
     </section>

@@ -1,0 +1,142 @@
+/* Ratings, offers, quotes */
+.shop-rating,
+.room-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 15.5px;
+}
+
+.shop-rating .icon,
+.room-rating .icon {
+  color: #e2a12b;
+  margin-top: 0;
+}
+
+.shop-rating strong {
+  font-weight: 800;
+}
+
+.shop-menu-link {
+  justify-self: start;
+  margin-left: 26px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 700;
+  font-size: 15.5px;
+  color: var(--sky);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Short phones (SE and similar): keep both actions on the first screen. */
+@media (max-height: 720px) and (max-width: 899px) {
+  .window {
+    height: clamp(130px, 22svh, 200px);
+  }
+
+  .switch-hint {
+    display: none;
+  }
+
+  .fascia {
+    margin-top: 10px;
+  }
+
+  .shop-info {
+    gap: 3px;
+  }
+}
+
+.panel--offer {
+  background: var(--tomato);
+  border-color: var(--tomato);
+  color: #fff;
+}
+
+.panel--offer .caps,
+.panel--offer .panel-note {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.panel--offer .btn--line {
+  border-color: #fff;
+  color: #fff;
+}
+
+.offer-what {
+  font-family: var(--serif);
+  font-stretch: 56%;
+  font-weight: 800;
+  font-size: clamp(44px, 13vw, 76px);
+  line-height: 0.9;
+}
+
+.unlimited-price {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.menu-signature {
+  margin: 6px 0 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--tomato);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.person-quote {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-stretch: 70%;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--cobalt);
+}
+
+:root[data-site='croydon'] .person-quote {
+  color: var(--sky);
+}
+
+.room-says {
+  display: grid;
+  gap: 14px;
+  margin: 8px 0 4px;
+  padding: 16px 0 4px;
+  border-top: 1px solid var(--line);
+}
+
+.room-says figure {
+  margin: 0;
+}
+
+.room-says blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-stretch: 72%;
+  font-weight: 560;
+  font-size: 21px;
+  line-height: 1.22;
+}
+
+.room-says figcaption {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 900px) {
+  .week-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .week-grid:has(> :nth-child(2):last-child) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

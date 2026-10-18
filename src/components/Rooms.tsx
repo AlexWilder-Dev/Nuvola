@@ -3,7 +3,7 @@ import { useSite } from '../lib/site'
 import { sites, siteOrder } from '../data/nuvola'
 import { photos } from '../data/photos'
 import { hoursRows } from '../lib/hours'
-import { Arrow, Clock, Pin } from './Icons'
+import { Arrow, Clock, Pin, Star } from './Icons'
 
 /** Both places, side by side: they are different rooms that work differently. */
 export function Rooms() {
@@ -73,6 +73,24 @@ export function Rooms() {
                           ))}
                         </tbody>
                       </table>
+                    </div>
+                  )}
+
+                  {s.quotes && s.quotes.length > 0 && (
+                    <div className="room-says">
+                      {s.rating && (
+                        <a className="room-rating" href={s.rating.url} target="_blank" rel="noreferrer">
+                          <Star /> {s.rating.score} on Google from {s.rating.count} reviews
+                        </a>
+                      )}
+                      {s.quotes.map((q) => (
+                        <figure key={q.author}>
+                          <blockquote>“{q.text}”</blockquote>
+                          <figcaption>
+                            {q.author}, {q.where}
+                          </figcaption>
+                        </figure>
+                      ))}
                     </div>
                   )}
 

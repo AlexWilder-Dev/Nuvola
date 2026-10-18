@@ -34,6 +34,7 @@ function Items({ section }: { section: MenuSection }) {
                 ))}
               </p>
               {item.description && <p className="menu-desc">{item.description}</p>}
+              {item.signature && <p className="menu-signature">{item.signature}</p>}
             </div>
             <p className="menu-price">{item.price}</p>
           </li>
