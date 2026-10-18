@@ -1,0 +1,588 @@
+/*
+  Palette sampled from Nuvola's own things:
+  - fascia white and painted sky-blue lettering at 4 Market Row
+  - cobalt outline and slate fill of the cloud mural inside Brixton
+  - tomato and basil from the pizza under that cloud
+  - black unit frame at Boxpark and the electric blue of the Croydon menu
+*/
+:root {
+  --fascia: #f3f0e8;
+  --fascia-deep: #e7e2d5;
+  --ink: #15263a;
+  --ink-soft: #46576a;
+  --sky: #4a8fc4;
+  --cobalt: #0d4a8b;
+  --slate: #5b7fa3;
+  --tomato: #c8372d;
+  --basil: #2e8650;
+  --wood: #c99a61;
+  --line: rgba(21, 38, 58, 0.14);
+  --card: #fbfaf6;
+  --on-cobalt: #ffffff;
+  --btn-2-bg: transparent;
+  --btn-2-ink: var(--cobalt);
+  --wordmark: var(--sky);
+  --frame: #ffffff;
+
+  --serif: 'Roboto Serif Variable', 'Roboto Serif', Georgia, serif;
+  --sans: 'Figtree Variable', 'Figtree', system-ui, sans-serif;
+
+  --gutter: 16px;
+  --max: 1180px;
+  --radius: 6px;
+
+  color-scheme: light;
+  transition: background-color 0.5s ease;
+}
+
+/* Croydon: the black Boxpark unit and the bright blue Croydon menu */
+:root[data-site='croydon'] {
+  --fascia: #0e0f12;
+  --fascia-deep: #17191e;
+  --ink: #f1f3f6;
+  --ink-soft: #a9b2bf;
+  --sky: #3db5f5;
+  --cobalt: #3db5f5;
+  --slate: #2a3a4c;
+  --line: rgba(241, 243, 246, 0.16);
+  --card: #15171c;
+  --on-cobalt: #04121d;
+  --btn-2-ink: #f1f3f6;
+  --wordmark: #f1f3f6;
+  --frame: #000000;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--fascia);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Type */
+.display {
+  font-family: var(--serif);
+  font-stretch: 56%;
+  font-weight: 780;
+  letter-spacing: -0.005em;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.caps {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 34em;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 58px;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: 2px solid var(--cobalt);
+  background: var(--cobalt);
+  color: var(--on-cobalt);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.15;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn small {
+  display: block;
+  font-weight: 500;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.btn--line {
+  background: var(--btn-2-bg);
+  color: var(--btn-2-ink);
+}
+
+.btn .arrow {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+.btn-row {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 560px) {
+  .btn-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Section scaffolding */
+.section {
+  padding: 72px 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  font-size: clamp(40px, 11vw, 76px);
+  color: var(--cobalt);
+}
+
+:root[data-site='croydon'] .section-head h2 {
+  color: var(--ink);
+}
+
+.section-head .caps {
+  color: var(--sky);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ───────── Site switch ───────── */
+.switch {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  margin-top: 12px;
+  border-radius: 10px;
+  background: var(--fascia-deep);
+  border: 1px solid var(--line);
+}
+
+.switch-opt {
+  position: relative;
+  display: grid;
+  gap: 1px;
+  text-align: left;
+  padding: 9px 12px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  color: var(--ink-soft);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.switch-opt.is-on {
+  color: var(--on-cobalt);
+}
+
+.switch-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  background: var(--cobalt);
+  z-index: 0;
+}
+
+.switch-name,
+.switch-hint {
+  position: relative;
+  z-index: 1;
+}
+
+.switch-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.switch-hint {
+  font-size: 12.5px;
+  opacity: 0.8;
+}
+
+.switch--compact {
+  margin: 0;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.switch--compact .switch-opt {
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.switch--compact .switch-name {
+  font-size: 14px;
+}
+
+/* ───────── Shopfront ───────── */
+.shopfront {
+  padding-bottom: 28px;
+}
+
+.fascia {
+  margin-top: 14px;
+  background: var(--fascia);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+:root[data-site='croydon'] .fascia {
+  background: #000;
+  border-color: #000;
+}
+
+.fascia-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+.fascia-word {
+  margin: 0;
+  color: var(--wordmark);
+  line-height: 0;
+}
+
+.wordmark {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fascia-sub {
+  justify-self: end;
+  margin: 8px 0 0;
+  color: var(--sky);
+  font-size: 13px;
+  letter-spacing: 0.32em;
+}
+
+:root[data-site='croydon'] .fascia-sub {
+  color: #f1f3f6;
+}
+
+:root[data-site='croydon'] .fascia-inner {
+  padding-left: 52px;
+  padding-right: 52px;
+}
+
+.unit-no {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #f1f3f6;
+}
+
+.unit-no--l {
+  left: var(--gutter);
+}
+
+.unit-no--r {
+  right: var(--gutter);
+}
+
+.shop-body {
+  display: grid;
+  gap: 14px;
+  padding-top: 14px;
+}
+
+.shop-actions {
+  grid-template-columns: 1fr 1fr;
+}
+
+.shop-actions .btn {
+  position: relative;
+  align-items: flex-end;
+  min-height: 72px;
+  padding: 12px 14px;
+}
+
+.shop-actions .btn .arrow {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.window {
+  position: relative;
+  /* Short phones still get status and both actions on the first screen. */
+  height: clamp(160px, 30svh, 300px);
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--fascia-deep);
+  border: 6px solid var(--frame);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.window img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Brixton's front: white glazing bars across the glass */
+.mullions {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Brixton's front: a transom of small panes above the big glass, as on Market Row */
+.window--brixton .mullions {
+  background:
+    linear-gradient(var(--frame), var(--frame)) 0 17% / 100% 5px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 calc(25% - 5px), var(--frame) calc(25% - 5px) 25%) 0 0 / calc(100% + 5px) 17% no-repeat;
+}
+
+.window--croydon {
+  border-width: 10px;
+}
+
+.shop-info {
+  display: grid;
+  gap: 6px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.status .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  flex: none;
+}
+
+.status.is-open .dot {
+  background: var(--basil);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--basil) 60%, transparent);
+  animation: breathe 2.4s ease-out infinite;
+}
+
+:root[data-site='croydon'] .status.is-open .dot {
+  background: #45d07c;
+}
+
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--basil) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+.shop-address {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  text-decoration: none;
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+
+.shop-dir {
+  margin-left: 6px;
+  font-weight: 700;
+  color: var(--sky);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-top: 1px;
+  color: var(--sky);
+}
+
+@media (min-width: 900px) {
+  .shopfront .switch {
+    max-width: 560px;
+  }
+
+  .fascia-inner {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+  }
+
+  .fascia-word {
+    max-width: 760px;
+  }
+
+  .fascia-sub {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .shop-body {
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-areas: 'window info' 'window actions';
+    column-gap: 48px;
+    row-gap: 24px;
+    padding-top: 28px;
+  }
+
+  .window {
+    grid-area: window;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .shop-info {
+    grid-area: info;
+    align-self: end;
+  }
+
+  .shop-actions {
+    grid-area: actions;
+    align-self: start;
+    grid-template-columns: 1fr;
+  }
+
+  .status {
+    font-size: 22px;
+  }
+}
+
+/* ───────── Sticky action bar (phone) ───────── */
+.actionbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: grid;
+  gap: 8px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--fascia) 94%, transparent);
+  border-top: 1px solid var(--line);
+  backdrop-filter: saturate(1.2) blur(6px);
+}
+
+.actionbar-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn--sm {
+  min-height: 46px;
+  justify-content: center;
+  font-size: 15.5px;
+  padding: 8px 10px;
+}
+
+@media (min-width: 900px) {
+  .actionbar {
+    left: auto;
+    right: 20px;
+    bottom: 20px;
+    width: 420px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+}

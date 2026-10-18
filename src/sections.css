@@ -1,0 +1,595 @@
+/* ───────── Dough sequence ───────── */
+.dough {
+  padding-top: 72px;
+  border-top: 1px solid var(--line);
+}
+
+.dough-intro {
+  display: grid;
+  gap: 12px;
+}
+
+.dough-intro .caps {
+  color: var(--sky);
+}
+
+.dough-intro h2 {
+  font-size: clamp(44px, 12vw, 92px);
+  color: var(--cobalt);
+}
+
+:root[data-site='croydon'] .dough-intro h2 {
+  color: var(--ink);
+}
+
+.dough-track {
+  position: relative;
+  height: 420vh;
+}
+
+.dough-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.dough-stage-inner {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 14px;
+  padding-top: 22px;
+  padding-bottom: 124px;
+}
+
+.dough-progress {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dough-progress li {
+  flex: 1;
+  padding-top: 8px;
+  border-top: 3px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.dough-progress li.is-done {
+  border-color: color-mix(in srgb, var(--sky) 45%, transparent);
+}
+
+.dough-progress li.is-on {
+  border-color: var(--sky);
+  color: var(--ink);
+}
+
+.dough-copy {
+  min-height: 8.6em;
+}
+
+.dough-copy .caps {
+  margin: 0 0 6px;
+  color: var(--sky);
+}
+
+.dough-copy h3 {
+  font-size: clamp(34px, 9.5vw, 56px);
+  margin-bottom: 8px;
+}
+
+.dough-copy p:last-child {
+  margin: 0;
+  max-width: 30em;
+}
+
+.dough-art {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 44svh, 520px);
+  aspect-ratio: 600 / 700;
+  color: var(--ink-soft);
+}
+
+.dough-cloud {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+}
+
+.dough-cloud svg,
+.dough-cloud img {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.dough-pizza {
+  position: absolute;
+  left: 17%;
+  width: 66%;
+  top: 41%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 18px 40px -18px rgba(21, 38, 58, 0.45);
+}
+
+.dough-pizza img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dough-bench {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+
+.dough-flour circle {
+  fill: var(--ink-soft);
+  opacity: 0.35;
+}
+
+.dough-bubbles circle {
+  fill: rgba(255, 255, 255, 0.55);
+  stroke: #c7ad78;
+  stroke-width: 1.6;
+}
+
+@media (min-width: 900px) {
+  .dough-stage-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    column-gap: 60px;
+    padding-bottom: 40px;
+  }
+
+  .dough-progress {
+    grid-column: 1 / -1;
+  }
+
+  .dough-copy {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .dough-art {
+    grid-column: 2;
+    grid-row: 2;
+    width: min(100%, 70vh);
+  }
+}
+
+.dough-static {
+  display: grid;
+  gap: 28px;
+  padding: 32px 0 72px;
+}
+
+.dough-art--static {
+  width: min(100%, 420px);
+}
+
+.dough-steps {
+  display: grid;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dough-steps .caps {
+  margin: 0 0 4px;
+  color: var(--sky);
+}
+
+.dough-steps h3 {
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+
+.dough-steps p {
+  margin: 0;
+}
+
+/* ───────── Menu ───────── */
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 calc(var(--gutter) * -1) 20px;
+  padding: 2px var(--gutter) 6px;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex: none;
+  padding: 10px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab.is-on {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--on-cobalt);
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 16px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-item.has-photo {
+  grid-template-columns: 76px 1fr auto;
+}
+
+.menu-photo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  transform: scale(1);
+}
+
+.menu-name {
+  margin: 0;
+  font-weight: 800;
+  font-size: 15.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.menu-desc {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.menu-price {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.menu-mark {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  vertical-align: 2px;
+  color: var(--sky);
+}
+
+.menu-list--tight .menu-item {
+  padding: 10px 0;
+}
+
+.menu-list--tight .menu-name {
+  font-size: 14.5px;
+}
+
+.menu-note {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.menu-source {
+  margin: 22px 0 0;
+  font-size: 13.5px;
+  opacity: 0.8;
+}
+
+/* The menu card takes the look of each site's printed menu:
+   Brixton's pale watercolour blue sheet, Croydon's bright blue sheet with the navy ME/NU block. */
+.menu-card {
+  position: relative;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 34px var(--gutter) 28px;
+  background: #d8ebf7;
+  color: #2f3a45;
+  --line: rgba(47, 58, 69, 0.22);
+  --ink-soft: #4d5b69;
+  overflow: hidden;
+}
+
+.menu-card--brixton {
+  background:
+    radial-gradient(120% 60% at 0% 0%, rgba(255, 255, 255, 0.55), transparent 60%),
+    radial-gradient(90% 50% at 100% 100%, rgba(120, 182, 226, 0.35), transparent 70%),
+    #d8ebf7;
+}
+
+.menu-card--croydon {
+  background: #3db5f5;
+  color: #000;
+  --line: rgba(0, 0, 0, 0.25);
+  --ink-soft: #0c2233;
+}
+
+.menu-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: #0b4fa6;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.menu-head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.menu-card--croydon .menu-head {
+  justify-items: start;
+  text-align: left;
+}
+
+.menu-brand {
+  margin: 0;
+  font-weight: 800;
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #4a4f57;
+}
+
+.menu-card--croydon .menu-brand {
+  color: #000;
+  font-size: 32px;
+}
+
+.menu-flourish {
+  width: 220px;
+  color: #4a4f57;
+}
+
+.menu-bar {
+  display: block;
+  width: 150px;
+  height: 12px;
+  background: #000;
+}
+
+.menu-title {
+  margin: 10px 0 0;
+  font-family: var(--serif);
+  font-stretch: 60%;
+  font-weight: 760;
+  font-size: clamp(30px, 8.5vw, 44px);
+  line-height: 1;
+  color: var(--cobalt);
+}
+
+:root[data-site='croydon'] .menu-title {
+  color: #000;
+}
+
+.menu-intro {
+  margin: 0;
+  max-width: 30em;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.menu-card .tab {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.35);
+  color: inherit;
+}
+
+.menu-card .tab.is-on {
+  background: #2f3a45;
+  border-color: #2f3a45;
+  color: #fff;
+}
+
+.menu-card--croydon .tab.is-on {
+  background: #0b4fa6;
+  border-color: #0b4fa6;
+}
+
+.menu-section-title {
+  margin: 4px 0 0;
+  padding: 8px 0;
+  border-top: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  text-align: center;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-card--croydon .menu-section-title {
+  text-align: left;
+  border: 0;
+  padding: 0 0 4px;
+  font-size: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.menu-card .menu-mark {
+  color: #0b4fa6;
+}
+
+.menu-card .menu-photo {
+  background: #f2f2f0;
+}
+
+@media (min-width: 720px) {
+  .menu-card {
+    margin: 0;
+    padding: 48px 48px 36px;
+    border-radius: 4px;
+  }
+
+  .menu-block {
+    font-size: 26px;
+    padding: 16px 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .menu-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+  }
+}
+
+/* ───────── Write to us ───────── */
+.write-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.write-form {
+  display: grid;
+  gap: 14px;
+  max-width: 560px;
+}
+
+.write-sites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.write-sites legend {
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+}
+
+.chip {
+  position: relative;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+}
+
+.chip span {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.chip input:checked + span {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--on-cobalt);
+}
+
+.chip input:focus-visible + span {
+  outline: 3px solid var(--sky);
+  outline-offset: 2px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  font-weight: 400;
+  font-size: 17px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--sky);
+}
+
+.write-done {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  max-width: 560px;
+  padding: 24px;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.write-done .display {
+  font-size: 40px;
+  color: var(--cobalt);
+}
+
+.write-done p {
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  .write-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
