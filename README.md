@@ -8,7 +8,7 @@ Static data only: no ordering, booking or payment backend, and the contact form 
 
 ## Stack
 
-Vite, React, TypeScript, Framer Motion, React Router (`HashRouter`), deployed to GitHub Pages under `/nuvola-pizza/`.
+Vite, React, TypeScript, Framer Motion, React Router (`HashRouter`), deployed to GitHub Pages at the repository's Pages address.
 
 ```sh
 npm install
