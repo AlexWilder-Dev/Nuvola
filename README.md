@@ -3,8 +3,8 @@
 A speculative front-end for Nuvola Pizza (Brixton Village and Boxpark Croydon), built to pitch to the owners.
 Static data only: no ordering, booking or payment backend, and the contact form shows a confirmation without sending anything.
 
-- Live: https://alexwilder-dev.github.io/nuvola-pizza/
-- Deep links for ads: `https://alexwilder-dev.github.io/nuvola-pizza/#/brixton` and `…/#/croydon` open straight onto that site's shopfront and remember the choice.
+- Live: https://alexwilder-dev.github.io/Nuvola/ (served at the repository's name; renaming the repo to `nuvola-pizza` moves it to https://alexwilder-dev.github.io/nuvola-pizza/ with no code change)
+- Deep links for ads: `…/#/brixton` and `…/#/croydon` open straight onto that site's shopfront and remember the choice. Add `?v=name` before the `#` to tag a link in the open pings.
 
 ## Stack
 
@@ -17,7 +17,7 @@ npm run build    # type-check and build to dist/
 npm run og       # rebuild public/og.jpg and favicons (sharp)
 ```
 
-`.github/workflows/pages.yml` builds and publishes `dist/` on every push to `main`.
+`.github/workflows/pages.yml` builds and publishes `dist/` on every push to the default branch. It passes the real Pages address as `SITE_URL`, so the base path and every link-preview URL in `index.html` match where the site is served.
 
 ## Where things live
 
